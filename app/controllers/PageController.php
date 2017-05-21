@@ -15,6 +15,7 @@ use myframework\Controller;
 class PageController extends Controller
 {
     public $layout = "main";
+
     /**
      * Список страниц
      *

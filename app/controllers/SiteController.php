@@ -23,7 +23,6 @@ class SiteController extends Controller
     {
         $this->layout = "main";
         $this->render('index');
-//        $this->redirect("/page/index");
     }
 
     /**

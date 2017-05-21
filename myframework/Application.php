@@ -25,8 +25,10 @@ class Application
     /** @var Request */
     public $request;
 
+    /** @var string */
     public $controllerName;
 
+    /** @var string */
     public $actionName;
 
 
@@ -50,7 +52,6 @@ class Application
 
         $this->request = new Request();
         $this->_router = new Router($this->request);
-
     }
 
     /**
@@ -80,8 +81,7 @@ class Application
             }
 
             echo call_user_func([$controller, $action]);
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             die($e->getMessage());
         }
     }

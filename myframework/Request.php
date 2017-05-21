@@ -13,8 +13,8 @@ class Request
     const METHOD_GET = "GET";
     const METHOD_POST = "POST";
 
-
-    private $params = [];
+    /** @var array Параметры */
+    private $_params = [];
 
 
     /**
@@ -109,8 +109,8 @@ class Request
      */
     public function getParam($name, $default = null)
     {
-        if (isset($this->params[$name])) {
-            return $this->params[$name];
+        if (isset($this->_params[$name])) {
+            return $this->_params[$name];
         }
 
         return $default;
@@ -122,7 +122,7 @@ class Request
      */
     public function setParam($name, $value)
     {
-        $this->params[$name] = $value;
+        $this->_params[$name] = $value;
     }
 
 }

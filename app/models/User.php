@@ -33,6 +33,7 @@ class User extends DbModel
         if (!preg_match('/^[a-zA-Z\d-_]+$/', $this->login)) {
             $this->addError('Поле "Логин" содержит запрещенные символы!');
         }
+        // todo нужна проверка на уникальность
 
         return !$this->hasError();
     }

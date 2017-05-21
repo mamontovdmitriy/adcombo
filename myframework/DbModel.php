@@ -11,6 +11,7 @@ use myframework\Application;
 
 class DbModel extends Model
 {
+    /** @var string Название таблицы */
     protected $tableName = "";
 
     /**

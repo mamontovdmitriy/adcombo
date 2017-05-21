@@ -36,16 +36,6 @@ class Page extends DbModel
             $this->addError('Поле "Заголовок" должно содержать не более 255 символов!');
         }
 
-//        if (!$this->alias) {
-//            $this->addError('Заполните обязательное поле "Алиас"!');
-//        }
-//        if (strlen($this->alias) > 255) {
-//            $this->addError('Поле "Алиас" должно содержать не более 255 символов!');
-//        }
-//        if (!preg_match('/^[a-zA-Z\d-_]+$/', $this->alias)) {
-//            $this->addError('Поле "Алиас" содержит запрещенные символы!');
-//        }
-
         if (!$this->text) {
             $this->addError('Заполните обязательное поле "Текст"!');
         }

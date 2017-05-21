@@ -12,12 +12,12 @@ class Router
     public $controller = 'Site';
     public $action = 'index';
 
-    private $request;
+    private $_request;
 
 
     public function __construct(Request $request)
     {
-        $this->request = $request;
+        $this->_request = $request;
     }
 
     /**
@@ -25,7 +25,7 @@ class Router
      */
     public function parseUri()
     {
-        $uri = $this->request->getUri();
+        $uri = $this->_request->getUri();
         $uri = trim($uri, '/');
         $parts = explode('/', $uri);
 
@@ -46,7 +46,7 @@ class Router
 
                 $name = urldecode($parts[$i]);
                 $value = urldecode($parts[$i + 1]);
-                $this->request->setParam($name, $value);
+                $this->_request->setParam($name, $value);
             }
         }
     }

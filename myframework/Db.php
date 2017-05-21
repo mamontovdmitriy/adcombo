@@ -13,7 +13,7 @@ class Db
     public $instance;
 
     /** @var  array */
-    private $options;
+    private $_options;
 
 
     public function __construct($options)
@@ -40,8 +40,8 @@ class Db
      */
     public function getOption($name, $default = null)
     {
-        if (isset($this->options[$name])) {
-            return $this->options[$name];
+        if (isset($this->_options[$name])) {
+            return $this->_options[$name];
         }
 
         return $default;
@@ -54,7 +54,7 @@ class Db
      */
     public function setOption($name, $value)
     {
-        $this->options[$name] = $value;
+        $this->_options[$name] = $value;
 
         return $this;
     }
@@ -89,7 +89,7 @@ class Db
     {
         $args = func_get_args();
 
-        $sql  = array_shift($args);
+        $sql = array_shift($args);
 
         $sth = $this->instance->prepare($sql);
         $sth->execute($args);
